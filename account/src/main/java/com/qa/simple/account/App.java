@@ -8,6 +8,10 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+    	Service accounts = new Service();
+    	accounts.addAccount("Michal", "Mionskowski");
+    	accounts.addAccount("Vince", "one");
+    	accounts.addAccount("John", "two" );
+    	accounts.getFullName(1);
     }
 }
