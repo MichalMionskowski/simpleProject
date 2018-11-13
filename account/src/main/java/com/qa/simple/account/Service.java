@@ -7,11 +7,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Service {
 	HashMap<Integer , Person> userList = new HashMap<Integer,Person>(); 
-	public static int AccountNumber = 0;
+	public  int AccountNumber = 0;
 	
 	public void addAccount(String firstName, String secondName) {
-		this.userList.put(AccountNumber,new Person(firstName,secondName));
-		Service.AccountNumber ++;
+		this.userList.put(this.AccountNumber,new Person(firstName,secondName));
+		this.AccountNumber ++;
 	}
 	
 	public void getFullName(int accountNumber) {
