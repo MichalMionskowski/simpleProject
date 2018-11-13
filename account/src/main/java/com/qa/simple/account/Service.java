@@ -31,12 +31,10 @@ public class Service {
 	}
 	
 	public int countNameOccurances(String name) {
-		int count = 0 ;
-		for (Person member : userList.values()) {
-			if(member.getFirstName().equals(name)) {
-				count ++ ;
-			}
-		}
-		return count;
+		return
+				(int) userList.entrySet()
+				.stream()
+				.filter(member -> member.getValue().getFirstName().equals(name))
+				.count();
 	}
 }

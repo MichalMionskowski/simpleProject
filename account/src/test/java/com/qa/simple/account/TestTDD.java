@@ -4,8 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-
 
 public class TestTDD {
 	
