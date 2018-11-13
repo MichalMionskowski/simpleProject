@@ -13,6 +13,6 @@ public class Service {
 	
 	public void getFullName(int accountNumber) {
 			Person member = userList.get(accountNumber);
-			System.out.printf("The first name is %s and the second name %s\n", member.getFirstName(),member.getLastName());
+			System.out.println(member.toString());
 	}
 }
