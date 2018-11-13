@@ -4,12 +4,12 @@ import java.util.HashMap;
 
 public class Service {
 	HashMap<Integer , Person> userList = new HashMap<Integer,Person>(); 
-	public static int accountNumber = 0;
+	public static int AccountNumber = 0;
 	
 	public void addAccount(String firstName, String secondName) {
 		Person newPerson = new Person(firstName,secondName);
-		this.userList.put(accountNumber,newPerson);
-		Service.accountNumber ++;
+		this.userList.put(AccountNumber,newPerson);
+		Service.AccountNumber ++;
 	}
 	
 	public void getFullName(int accountNumber) {
