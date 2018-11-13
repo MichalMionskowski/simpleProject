@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+
+
 public class TestTDD {
 	
 		@Test
@@ -14,7 +17,7 @@ public class TestTDD {
 		}
 		
 		@Test
-		public void testNameOccurances() {
+		public void testNameOccurances1() {
 			Service accounts = new Service();
 			accounts.addAccount("Michal", "Mionskowski");
 			accounts.addAccount("Michal", "Mionskowski1");
@@ -23,7 +26,7 @@ public class TestTDD {
 		}
 		
 		@Test
-		public void testNameOccurances() {
+		public void testNameOccurances2() {
 			Service accounts = new Service();
 			accounts.addAccount("Michal", "Mionskowski");
 			accounts.addAccount("Michal", "Mionskowski1");
@@ -31,7 +34,7 @@ public class TestTDD {
 			assertEquals(0,accounts.countNameOccurances("John"));
 		}
 		@Test
-		public void testNameOccurances() {
+		public void testNameOccurances3() {
 			Service accounts = new Service();
 			accounts.addAccount("Michal", "Mionskowski");
 			accounts.addAccount("Michal", "Mionskowski1");
@@ -39,6 +42,26 @@ public class TestTDD {
 			accounts.addAccount("John", "Mionskowski2");
 			assertEquals(1,accounts.countNameOccurances("John"));
 		}
-	
+		@Test
+		public void testJSON() throws Exception  {
+	    	Service accounts = new Service();
+	    	accounts.addAccount("Michal", "Mionskowski");
+			String expected = "{\"firstName\":\"Michal\",\"lastName\":\"Mionskowski\"}";
+			assertEquals(expected,accounts.printInJSON());
+		}
+		@Test
+		public void testJSON1() throws Exception   {
+	    	Service accounts = new Service();
+	    	accounts.addAccount("bob", "skas");
+			String expected = "{\"firstName\":\"bob\",\"lastName\":\"skas\"}";
+			assertEquals(expected,accounts.printInJSON());
+		}
+		@Test
+		public void testJSON2()   {
+	    	Service accounts = new Service();
+	    	accounts.addAccount("ope", "Mionskowski");
+			String expected = "firstName=ope, lastName=Mionskowski";
+			assertEquals(expected,accounts.getFullName(0));
+		}
 
 }

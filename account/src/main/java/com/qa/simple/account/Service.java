@@ -14,15 +14,29 @@ public class Service {
 		this.AccountNumber ++;
 	}
 	
-	public void getFullName(int accountNumber) {
+	public String getFullName(int accountNumber) {
 			Person member = userList.get(accountNumber);
 			System.out.println(member.toString());
+			return member.toString();
 	}
 	
-	public void printInJSON() throws JsonProcessingException {
+	public String printInJSON() throws JsonProcessingException {
 		ObjectMapper mapper = new ObjectMapper();
+		String output = "";
 		for(Person member : userList.values()) {
 			System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(member));
+			output += mapper.writeValueAsString(member);
 		}
+		return output;
+	}
+	
+	public int countNameOccurances(String name) {
+		int count = 0 ;
+		for (Person member : userList.values()) {
+			if(member.getFirstName().equals(name)) {
+				count ++ ;
+			}
+		}
+		return count;
 	}
 }
