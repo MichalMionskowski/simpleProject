@@ -7,8 +7,7 @@ public class Service {
 	public static int AccountNumber = 0;
 	
 	public void addAccount(String firstName, String secondName) {
-		Person newPerson = new Person(firstName,secondName);
-		this.userList.put(AccountNumber,newPerson);
+		this.userList.put(AccountNumber,new Person(firstName,secondName));
 		Service.AccountNumber ++;
 	}
 	
