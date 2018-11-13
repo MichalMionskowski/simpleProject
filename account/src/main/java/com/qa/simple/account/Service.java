@@ -12,11 +12,7 @@ public class Service {
 	}
 	
 	public void getFullName(int accountNumber) {
-		for(Integer  accnumber: userList.keySet()) {
-			if(accnumber == accountNumber) {
-				Person member = userList.get(accnumber);
-				System.out.printf("The first name is %s and the second name %s\n", member.getFirstName(),member.getLastName());
-			}
-		}
+			Person member = userList.get(accountNumber);
+			System.out.printf("The first name is %s and the second name %s\n", member.getFirstName(),member.getLastName());
 	}
 }
